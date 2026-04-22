@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 220 25% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 14%;
+    --primary: 221 68% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 158 40% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 25% 93%;
+    --muted-foreground: 215 15% 48%;
+    --accent: 262 45% 68%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 25% 90%;
+    --input: 214 25% 88%;
+    --ring: 221 68% 55%;
+    --radius: 0.75rem;
+
+    --sidebar-background: 210 30% 96%;
+    --sidebar-foreground: 220 20% 30%;
+    --sidebar-primary: 221 68% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 25% 93%;
+    --sidebar-accent-foreground: 220 20% 30%;
+    --sidebar-border: 214 25% 90%;
+    --sidebar-ring: 221 68% 55%;
+
+    --wellness-green: 158 40% 45%;
+    --wellness-lavender: 262 45% 68%;
+    --wellness-orange: 30 90% 55%;
+    --wellness-red: 0 70% 55%;
+    --wellness-blue: 221 68% 55%;
+  }
+
+  .dark {
+    --background: 220 25% 7%;
+    --foreground: 210 20% 92%;
+    --card: 220 25% 11%;
+    --card-foreground: 210 20% 92%;
+    --popover: 220 25% 11%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 221 68% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 158 35% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 215 15% 58%;
+    --accent: 262 40% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 18%;
+    --input: 220 20% 20%;
+    --ring: 221 68% 60%;
+
+    --sidebar-background: 220 25% 9%;
+    --sidebar-foreground: 210 15% 80%;
+    --sidebar-primary: 221 68% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 16%;
+    --sidebar-accent-foreground: 210 15% 80%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 221 68% 60%;
+
+    --wellness-green: 158 35% 40%;
+    --wellness-lavender: 262 40% 58%;
+    --wellness-orange: 30 80% 50%;
+    --wellness-red: 0 65% 50%;
+    --wellness-blue: 221 68% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border shadow-sm;
+  }
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(221 68% 55%), hsl(262 45% 68%));
+  }
+  .gradient-wellness {
+    background: linear-gradient(135deg, hsl(158 40% 45%), hsl(221 68% 55%));
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(221 68% 55%), hsl(262 45% 68%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
+.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
